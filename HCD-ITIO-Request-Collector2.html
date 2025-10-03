@@ -10,17 +10,14 @@
     <button id="jira-issue-collector-trigger">Report a Bug</button>
 
     <script type="text/javascript">
-        window.ATL_JQ_PAGE_PROPS = {
-            "collectorId": "209094af", 
-            "triggerFunction": function(showCollectorDialog) {
-                jQuery(function() { 
-                    jQuery("#jira-issue-collector-trigger").on("click", function(e) {
-                        e.preventDefault();
-                        showCollectorDialog();
-                    });
-                });
-            }
-        };
+    	window.ATL_JQ_PAGE_PROPS = {
+    		"triggerFunction": function(showCollectorDialog) {
+    			jQuery("#jira-issue-collector-trigger").click(function(e) {
+    				e.preventDefault();
+    				showCollectorDialog();
+    			});
+    		}
+    	};
     </script>
     <script type="text/javascript" src="https://cvs-hcd-sandbox.atlassian.net/s/d41d8cd98f00b204e9800998ecf8427e-T/vf1kch/b/0/c95134bc67d3a521bb3f4331beb9b804/_/download/batch/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector.js?locale=en-US&collectorId=209094af"></script>
 
