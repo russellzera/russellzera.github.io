@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Intake Form with Embedding</title>
+</head>
+<body>
+
+    <p>This is just a SUPER BASIC form, it can be customized to whatever fields you want to collect from Jira.</p>
+
+    <button id="jira-issue-collector-trigger">Just Click Me</button>
+
+    <p>
+      Need help? <a href="#" id="jira-issue-collector-link">You can click this link to submit a form!</a>.
+    </p>
+
+
+    <script type="text/javascript">
+        // This is the configuration object that the Jira script looks for.
+        window.ATL_JQ_PAGE_PROPS = {
+            
+            // This should match the collectorId from your original script's URL.
+            "collectorId": "edcb8bc8", 
+            
+            // This function overrides Jira's default trigger behavior.
+            "triggerFunction": function(showCollectorDialog) {
+                
+                // This waits until the document is fully loaded before trying to find your elements.
+                // This is the most common fix for non-working buttons.
+                jQuery(function() { 
+                    jQuery("#jira-issue-collector-trigger, #jira-issue-collector-link").on("click", function(e) {
+                        e.preventDefault(); // Prevents the link from navigating.
+                        showCollectorDialog(); // This function opens the Jira modal.
+                    });
+                });
+            }
+        };
+    </script>
+
+    <script type="text/javascript" src="https://cvs-hcd-sandbox.atlassian.net/s/d41d8cd98f00b204e9800998ecf8427e-T/vf1kch/b/0/c95134bc67d3a521bb3f4331beb9b804/_/download/batch/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector.js?locale=en-US&collectorId=edcb8bc8"></script>
+
+</body>
+</html>
