@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HCD ITIO Strategic Intake</title>
+    <style>
+        :root {
+            --bg-page: #f5f6f8;
+            --bg-card: #ffffff;
+            --border: #e2e4e9;
+            --text-primary: #172b4d;
+            --text-secondary: #5e6c84;
+            --accent: #0052cc;
+            --accent-hover: #0044aa;
+            --shadow: 0 1px 3px rgba(9, 30, 66, 0.08);
+            --radius: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, 'Helvetica Neue', sans-serif;
+            font-size: 15px;
+            line-height: 1.5;
+            color: var(--text-primary);
+            background: var(--bg-page);
+            min-height: 100vh;
+        }
+
+        .page {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 3rem;
+        }
+
+        header {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        h1 {
+            margin: 0 0 0.25rem 0;
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .subtitle {
+            margin: 0;
+            font-size: 0.9375rem;
+            color: var(--text-secondary);
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 1.5rem 1.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .card h2 {
+            margin: 0 0 0.75rem 0;
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .card p {
+            margin: 0 0 1rem 0;
+            color: var(--text-secondary);
+        }
+
+        .card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .card .note {
+            margin: 1rem 0 0 0;
+            padding: 0.75rem 1rem;
+            background: #f4f5f7;
+            border-radius: var(--radius);
+            border-left: 3px solid var(--accent);
+            font-size: 0.9375rem;
+        }
+
+        .card .note a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .card .note a:hover {
+            text-decoration: underline;
+        }
+
+        .process-list {
+            margin: 0;
+            padding-left: 1.5rem;
+        }
+
+        .process-list li {
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .process-list li:last-child {
+            margin-bottom: 0;
+        }
+
+        .process-list strong {
+            color: var(--text-primary);
+        }
+
+        /* Jira Work Item Collector – CTA (doc: "Launch the ITIO Request Form") */
+        .jira-cta-wrap {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+        }
+
+        #jira-issue-collector-trigger {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.625rem 1.25rem;
+            font-size: 0.9375rem;
+            font-weight: 500;
+            font-family: inherit;
+            color: #fff;
+            background: var(--accent);
+            border: none;
+            border-radius: var(--radius);
+            cursor: pointer;
+            transition: background 0.15s ease;
+        }
+
+        #jira-issue-collector-trigger:hover {
+            background: var(--accent-hover);
+        }
+
+        #jira-issue-collector-trigger:focus {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        footer {
+            margin-top: 2.5rem;
+            padding-top: 1rem;
+            font-size: 0.8125rem;
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <header>
+            <h1>HCD IT Infrastructure &amp; Operations (ITIO) Strategic Intake</h1>
+        </header>
+
+        <section class="card">
+            <p>
+                Welcome to the Health Care Delivery IT Infrastructure &amp; Operations (HCD-ITIO) Intake Portal. The ITIO team partners with leaders across CVS, HCD, and broader enterprise groups to architect, execute, and deliver major infrastructure and operational initiatives.
+            </p>
+        </section>
+
+        <section class="card">
+            <h2>What is this portal for?</h2>
+            <p>
+                This portal is reserved for project-level initiatives that require ITIO engineering, architecture, or service delivery resources (e.g., new infrastructure stand-ups, major system integrations, enterprise security alignments).
+            </p>
+            <p class="note">
+                <strong>Note:</strong> For standard IT support (e.g., password resets, hardware repairs, local software issues), please route your request through the standard <a href="#" id="helpdesk-link">CVS General Helpdesk</a>.
+            </p>
+        </section>
+
+        <section class="card">
+            <h2>How the Process Works</h2>
+            <ol class="process-list">
+                <li><strong>Submit Your Request:</strong> Click the link below to provide high-level details about your initiative (Who you are, your department, and the core request).</li>
+                <li><strong>ITIO Triage:</strong> The IT Service Delivery (ITSD) team will review the request for scope and initial feasibility.</li>
+                <li><strong>Leadership Alignment:</strong> For project-level initiatives, ITSD will coordinate a sync between your team's leadership and ITIO leadership to define scope, timeline, and business value before formal roadmap integration.</li>
+            </ol>
+            <div class="jira-cta-wrap">
+                <button type="button" id="jira-issue-collector-trigger">Launch the ITIO Request Form</button>
+            </div>
+        </section>
+
+        <footer>
+            <p>IT Services Delivery · Tool and Process Strategy</p>
+        </footer>
+    </div>
+
+    <script type="text/javascript">
+        window.ATL_JQ_PAGE_PROPS = {
+            "collectorId": "c90543c5",
+            "triggerFunction": function(showCollectorDialog) {
+                jQuery(function() {
+                    jQuery("#jira-issue-collector-trigger").on("click", function(e) {
+                        e.preventDefault();
+                        showCollectorDialog();
+                    });
+                });
+            }
+        };
+    </script>
+    <script type="text/javascript" src="https://cvs-hcd.atlassian.net/s/d41d8cd98f00b204e9800998ecf8427e-T/150dpd/b/0/c95134bc67d3a521bb3f4331beb9b804/_/download/batch/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector.js?locale=en-US&collectorId=c90543c5"></script>
+</body>
+</html>
