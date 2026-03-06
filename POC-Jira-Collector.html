@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HCD-ITIO Service Intake</title>
+    <title>HCD ITIO Strategic Intake</title>
     <style>
         :root {
             --bg-page: #f5f6f8;
@@ -117,6 +117,82 @@
             color: var(--text-primary);
         }
 
+        /* Introductory text – italic per doc */
+        .intro-text {
+            font-style: italic;
+            color: var(--text-primary);
+        }
+
+        .intro-text .note {
+            font-style: italic;
+        }
+
+        /* Two-column eligibility: Submit Here If / Do NOT Use */
+        .eligibility-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem;
+            margin: 1rem 0 0 0;
+        }
+
+        @media (max-width: 600px) {
+            .eligibility-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .eligibility-box {
+            padding: 1.25rem 1.25rem 1rem;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+        }
+
+        .eligibility-box--use {
+            background: #f0fdf4;
+            border-color: #86efac;
+        }
+
+        .eligibility-box--use .eligibility-heading {
+            color: #166534;
+        }
+
+        .eligibility-box--dont {
+            background: #fef2f2;
+            border-color: #fecaca;
+        }
+
+        .eligibility-box--dont .eligibility-heading {
+            color: #991b1b;
+        }
+
+        .eligibility-heading {
+            font-size: 0.9375rem;
+            font-weight: 600;
+            margin: 0 0 0.75rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        .eligibility-box ul {
+            margin: 0;
+            padding-left: 1.25rem;
+            font-size: 0.9375rem;
+            line-height: 1.5;
+            color: var(--text-secondary);
+        }
+
+        .eligibility-box li {
+            margin-bottom: 0.5rem;
+        }
+
+        .eligibility-box li:last-child {
+            margin-bottom: 0;
+        }
+
+        .icon-check::before { content: "✔"; color: #16a34a; }
+        .icon-x::before { content: "✕"; color: #dc2626; }
+
         /* Jira Work Item Collector – CTA (doc: "Launch the ITIO Request Form") */
         .jira-cta-wrap {
             margin-top: 2rem;
@@ -159,19 +235,15 @@
 <body>
     <div class="page">
         <header>
-            <h1>HCD-IT Infrastructure &amp; Operations (ITIO) Service Intake</h1>
+            <h1>HCD IT Infrastructure &amp; Operations (ITIO) Strategic Intake</h1>
         </header>
 
-        <section class="card">
+        <section class="card intro-text">
             <p>
-                Welcome to the Health Care Delivery - IT Infrastructure &amp; Operations (HCD-ITIO) Service Intake Portal. The ITIO team partners with leaders across CVS, HCD, and broader enterprise groups to architect, execute, and deliver major infrastructure and operational initiatives.
+                Welcome to the <em>Health Care Delivery IT Infrastructure &amp; Operations (HCD-ITIO) Intake Portal</em>. The HCD-ITIO team partners with leaders across CVS, HCD, and broader enterprise groups to architect, execute, and deliver major infrastructure and operational initiatives.
             </p>
-        </section>
-
-        <section class="card">
-            <h2>What is this portal for?</h2>
             <p>
-                This portal is reserved for project-level initiatives that require ITIO engineering, architecture, or service delivery resources (e.g., new infrastructure stand-ups, major system integrations, enterprise security alignments).
+                <strong>What is this portal for?</strong> This request path is reserved for project-level initiatives that require HCD-ITIO engineering, architecture, or service delivery resources (e.g., new infrastructure stand-ups, major system integrations, enterprise security alignments).
             </p>
             <p class="note">
                 <strong>Note:</strong> For standard IT support (e.g., password resets, hardware repairs, local software issues), please route your request through the standard <a href="#" id="helpdesk-link">CVS General Helpdesk</a>.
@@ -179,11 +251,38 @@
         </section>
 
         <section class="card">
-            <h2>How the Process Works</h2>
+            <div class="eligibility-grid">
+                <div class="eligibility-box eligibility-box--use">
+                    <h3 class="eligibility-heading"><span class="icon-check" aria-hidden="true"></span> Submit Your Request Here If:</h3>
+                    <ul>
+                        <li>Your project requires HCD-ITIO engineering, architecture, or service delivery team support</li>
+                        <li>You are initiating a new infrastructure stand-up or cloud environment</li>
+                        <li>You are managing major system integrations across departments</li>
+                        <li>You need HCD security alignment for a new initiative</li>
+                        <li>Your request requires leadership alignment on Business Value and individual or team bandwidth</li>
+                    </ul>
+                </div>
+                <div class="eligibility-box eligibility-box--dont">
+                    <h3 class="eligibility-heading"><span class="icon-x" aria-hidden="true"></span> Do NOT Use This Form If:</h3>
+                    <ul>
+                        <li>You need standard IT support, such as password resets or MFA help.</li>
+                        <li>You have hardware issues, including laptop repairs or monitor replacements</li>
+                        <li>You are experiencing local software issues or need application access</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="card">
+            <h2>How the Process Works &amp; What to Expect</h2>
+            <p>
+                To ensure successful execution and protect enterprise capacity, all requests follow a structured engagement model:
+            </p>
             <ol class="process-list">
-                <li><strong>Submit Your Request:</strong> Click the link below to provide high-level details about your initiative (Who you are, your department, and the core request).</li>
-                <li><strong>ITIO Triage:</strong> The IT Service Delivery (ITSD) team will review the request for scope and initial feasibility.</li>
-                <li><strong>Leadership Alignment:</strong> For project-level initiatives, ITSD will coordinate a sync between your team's leadership and ITIO leadership to define scope, timeline, and business value before formal roadmap integration.</li>
+                <li><strong>1. Submit Your Request:</strong> Click the link below and provide the core details (Who you are, your department, a brief summary of your request, and your email address).</li>
+                <li><strong>2. Clarification &amp; Scoping:</strong> Within 2 Business Days, a member of the IT Service Delivery (ITSD) team will contact you directly. We will work with you to clarify the exact technical boundaries, understand the root 'ask', and define the true scope of the work.</li>
+                <li><strong>3. Strategic Prioritization &amp; Timeline Formulation:</strong> We prioritize execution based on enterprise impact and roadmap alignment. Once the technical scope is clarified, we will evaluate your request against our active ITIO portfolio. This vital step ensures we can secure the appropriate engineering bandwidth and partner with you to establish a realistic, committed delivery timeline.</li>
+                <li><strong>4. Leadership Alignment:</strong> For macro-level projects, ITSD will coordinate a final sync between your leadership and ITIO leadership to formally agree on the scope, timeline, and Business Value before it is locked into our active execution queue.</li>
             </ol>
             <div class="jira-cta-wrap">
                 <button type="button" id="jira-issue-collector-trigger">Launch the ITIO Request Form</button>
@@ -211,4 +310,3 @@
     <script type="text/javascript" src="https://cvs-hcd.atlassian.net/s/d41d8cd98f00b204e9800998ecf8427e-T/150dpd/b/0/c95134bc67d3a521bb3f4331beb9b804/_/download/batch/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector/com.atlassian.jira.collector.plugin.jira-issue-collector-plugin:issuecollector.js?locale=en-US&collectorId=c90543c5"></script>
 </body>
 </html>
-
